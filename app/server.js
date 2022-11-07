@@ -1,3 +1,5 @@
+const { AllRoutes } = require("./router/router");
+
 module.exports = class Application {
     #express = require("express");
     #app = this.#express()
@@ -23,10 +25,10 @@ module.exports = class Application {
         })
     }
     configDatabase(DB_URL){
-        const mongoose = require("mogoose");
+        const mongoose = require("mongoose");
         mongoose.connect(DB_URL, (error) => {
             if(error) throw error
-            return console.log("connect to DB successful...!!!");
+            return console.log("connected to DB successfully...!!!");
         })
     }
     errorHandler(){
@@ -48,10 +50,17 @@ module.exports = class Application {
         })
     }
     createRoutes(){
-        this.#app.get("/", (req, res, next) => {
+        this.#app.get("/", (err, req, res, next) => {
             return res.json({
-                message : "this is a new application!!"
+                message : "this is a new Express application!!"
             })
         })
+        this.#app.use(AllRoutes)
+        // this.#app.use((req, res, next) => {
+        //     try {
+        //     } catch (error) {
+        //         next(error)
+        //     }
+        // })
     }
 }

@@ -1,0 +1,12 @@
+###register request
+
+POST http://localhost:3000/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username" : "mehdiqorbani",
+    "email" : "mehdiqor@yahoo.com",
+    "mobile" : "09335316388",
+    "password" : "123456",
+    "confirm_password" : "123456"
+}
