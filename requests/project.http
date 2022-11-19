@@ -7,3 +7,26 @@ Content-Type: application/json
     "title" : "myPRJ",
     "text" : "text of the new project"
 }
+###get all projct
+POST http://localhost:3000/project/list
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+###create projct
+POST http://localhost:3000/project/create
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "title" : "myPRJ",
+    "text" : "text of the new project"
+}
+###create projct
+POST http://localhost:3000/project/create
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "title" : "myPRJ",
+    "text" : "text of the new project"
+}

@@ -8,7 +8,7 @@ function hashString(str){
     return bcrypt.hashSync(str, salt)
 }
 function tokenMaker(payload){
-    const token = jwt.sign(payload, process.env.SECRET_KEY, {expiresIn: "3 days"})
+    const token = jwt.sign(payload, process.env.SECRET_KEY, {expiresIn: "365 days"})
     return token
 }
 function jwtTokenVerify(token){
