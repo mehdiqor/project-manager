@@ -1,11 +1,10 @@
 const { ProjectModel } = require("../../models/project");
-const autobBind = require("auto-bind");
-const { json } = require("express");
+const autoBind = require("auto-bind");
 const { createLinkForFiles } = require("../../modules/functions");
 
 class ProjectConttroller{
     constructor(){
-        autobBind(this)
+        autoBind(this)
     }
     async createProject(req, res, next){
         try {

@@ -1,0 +1,58 @@
+### create team
+POST http://localhost:3000/team/create
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "name" : "football",
+    "description" : "football team",
+    "username" : "fcbayern2"
+}
+
+### get all teams
+GET http://localhost:3000/team/list
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "first_name" : "mehdi",
+    "last_name" : "ghorbani",
+    "skills" : ["dev", "linux"]
+}
+
+### get team by id
+GET http://localhost:3000/team/6381f3635cd0fc415b50e2c6
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "first_name" : "mehdi",
+    "last_name" : "ghorbani",
+    "skills" : ["dev", "linux"]
+}
+
+### get my teams
+GET http://localhost:3000/team/me
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "first_name" : "mehdi",
+    "last_name" : "ghorbani",
+    "skills" : ["dev", "linux"]
+}
+
+### remove team by id
+DELETE http://localhost:3000/team/remove/6381f3745cd0fc415b50e2ca
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "first_name" : "mehdi",
+    "last_name" : "ghorbani",
+    "skills" : ["dev", "linux"]
+}
+
+### invite user to team
+GET http://localhost:3000/team/invite/6381f3745cd0fc415b50e2ca/mehdiqor
+Authorization: Bearer {{$dotenv token}}
