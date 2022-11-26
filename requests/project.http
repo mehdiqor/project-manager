@@ -13,7 +13,7 @@ Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
 ###get projct by id
-GET http://localhost:3000/project/6378ee931d3178b4467000be
+GET http://localhost:3000/project/6378e7ca21d153f899a4fa6a
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
 
@@ -21,3 +21,14 @@ Content-Type: application/json
 DELETE http://localhost:3000/project/remove/6378ee931d3178b4467000be
 Authorization: Bearer {{$dotenv token}}
 Content-Type: application/json
+
+###edit projct by id
+PUT http://localhost:3000/project/edit/6378e7ca21d153f899a4fa6a
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+{
+    "title" : "",
+    "text" : "",
+    "tags" : ["", ""]
+}
