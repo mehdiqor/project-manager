@@ -43,18 +43,20 @@
     
 Database structure:
 1. Users:
-First_name, Last_name, Username, Password ,Email,
-Skills: [],
-Team: [],
-Role: [user, admin, team leader]
+ 
+    First_name, Last_name, Username, Password ,Email,
+    Skills: [],
+    Team: [],
+    Role: [user, admin, team leader]
 
 2. Project:
 
-Title, Text, Image,
-Tags: [],
-Owner: user,
-Team: teamID,
-Private or Public, Show
+    Title, Text, Image,
+    Tags: [],
+    Owner: user,
+    Team: teamID,
+    Private or Public, Show
 
 3. Team:
-Name, Description, Users, Projects, owner
+ 
+    Name, Description, Users, Projects, owner
