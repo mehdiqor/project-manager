@@ -11,6 +11,7 @@ router.get("/me", checkLogin, TeamController.getMyTeams)
 router.get("/invite/:teamID/:username", checkLogin, TeamController.inviteUserToTeam)
 router.get("/:id", checkLogin, mongoIdValidator(), expressValidatorMapper, TeamController.getTeamById)
 router.delete("/remove/:id", checkLogin, mongoIdValidator(), expressValidatorMapper, TeamController.removeTeamById)
+router.put("/update/:teamID", checkLogin, TeamController.updateTeam)
 
 module.exports = {
     teamRoutes : router
