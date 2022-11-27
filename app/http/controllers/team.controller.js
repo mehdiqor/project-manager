@@ -55,12 +55,31 @@ class TeamController{
     async getMyTeams(req, res, next){
         try {
             const userID = req.user._id;
-            const teams = await teamModel.find({
-                $or : [
-                    {owner : userID},
-                    {users : userID}
-                ]
-            })
+            const teams = await teamModel.aggregate([
+                {
+                    $match : {
+                        $or : [ {owner : userID}, {users : userID} ]
+                    }
+                },
+                {
+                    $lookup : {
+                        from : "users",
+                        localField : "owner",
+                        foreignField : "_id",
+                        as : "owner"
+                    }
+                },
+                {
+                    $project : {
+                        "owner.username" : 1,
+                        "owner.mobile" : 1,
+                        "owner.email" :1
+                    }
+                },
+                {
+                    $unwind : "$owner"
+                }
+            ])
             return res.status(200).json({
                 status : 200,
                 success : true,
@@ -142,7 +161,6 @@ class TeamController{
                 message : "بروزرسانی با موفقیت انجام شد"
             })
         } catch (error) {
-            console.log(error);
             next(error)
         }
     }
