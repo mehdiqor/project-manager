@@ -12,3 +12,18 @@ Content-Type: application/json
     "last_name" : "ghorbani",
     "skills" : ["dev", "linux"]
 }
+
+### get all requests
+GET http://localhost:3000/user/requests
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+### get Requests By Status
+GET http://localhost:3000/user/requests/accepted
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
+
+### accepted Requests
+GET http://localhost:3000/user/request-answer/63821ed33c4d3c5567938ae2/rejected
+Authorization: Bearer {{$dotenv token}}
+Content-Type: application/json
