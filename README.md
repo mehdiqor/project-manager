@@ -1,13 +1,8 @@
 # project-manager
 1. Authorization
 
-    a. Login:
-        Username, password login
-        return jwt token
-    b. Register:
-        username, email, mobile, password
-        validation
-        unique
+    a. Login: Username, password login, return jwt token
+    b. Register: username, email, mobile, password, validation, unique
     c. reset-password
     
 2. Team
@@ -19,17 +14,13 @@
     
 3. User
 
-    a. Profile actions
-        get profile - edit profile
-    b. Skills
-        add skill - edit skill
-    c. invite
-        accept - reject
+    a. Profile actions: get profile - edit profile
+    b. Skills: add skill - edit skill
+    c. invite: accept - reject
         
 4. Projects
 
-    a. Create project
-        title, text, image, team, owner, tags, category
+    a. Create project: title, text, image, team, owner, tags, category
     b. get all projects
     c. get project by id
     d. get team projects
@@ -38,7 +29,6 @@
     g. remove
     
 Database structure:
-
     1. Users:
     
         First_name
